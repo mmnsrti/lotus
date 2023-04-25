@@ -1,34 +1,30 @@
 import React from 'react'
 
-import {Container , AppBar ,Typography , Grow ,Grid } from '@mui/material'
-import lotus from './assets/lotus.png'
-import Forms from './components/Forms/Forms';
-import Posts from './components/Posts/Posts';
+import {Container} from '@mui/material'
+
+import Home from './components/Home/Home'
+
+import Navbar from './components/Navbar/Navbar'
+import Auth from './components/Auth/Auth';
+import { BrowserRouter as Router, Route, Switch , Routes} from 'react-router-dom';
 import  './styles.css';
 function App() {
-  
+
   return (
-    <div className="App">
-      <Container maxWidth='lg'>
-        <AppBar className='appBar' position='static' color='inherit'>
-          <Typography className='heading' variant='h2' align='center'>Lotus</Typography>
-          <img className='image' alt='Logo' src={lotus} />
-        </AppBar>
-        <Grow in>
-          <Container>
-            <Grid  container justifyContent="space-between" alignItems="stretch" spacing={2}>
-              <Grid xs={12}>
-                <Posts/>
-              </Grid>
-              <Grid xs={12}>
-                <Forms/>
-              </Grid>
-            </Grid>
-          </Container>
-        </Grow>
-      </Container>
-    </div>
+    <Router>
+       
+        <Container maxWidth='lg'>
+          <Navbar/>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/auth" element={<Auth />} />
+          </Routes>
+          
+        </Container>
+      
+    </Router>
   );
 }
 
 export default App;
+ 

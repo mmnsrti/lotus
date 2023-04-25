@@ -1,0 +1,108 @@
+.card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+    height: 100%;
+  }
+.card-media{
+   
+    width:0px;
+    
+    padding: 50%;
+    
+    background-color: rgba(0, 0, 0, 0.247);
+    background-blend-mode: darken;
+    transition: all .1s ease-out;
+    
+}
+.card-media:hover,
+.card-media .creatorAt:hover {
+  background-color: white;
+}
+
+.typography-creator {
+    position:absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    
+}
+.creator,
+.creatorAt {
+  background-color: transparent;
+  color: white;
+  padding: 0;
+}
+.creator {
+    font-size: 32px;
+    font-weight: 500;
+    padding: 10px 0;
+  }
+  
+  .creatorAt {
+    font-size: 2px;
+  }
+  
+  .tags {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+  }
+  
+  .tag {
+    color: blue;
+  }
+  
+  .message {
+    padding: 0 30px;
+  }
+  
+  .cardActions {
+    padding: 0 16px 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .button1 {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    right: 1rem;
+    color: rgb(154, 208, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1150px){
+  
+}
+@media screen and (max-width:600px){
+
+}
+@media screen and (max-width:400px){
+
+}
