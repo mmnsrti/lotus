@@ -8,10 +8,14 @@ const auth =async(req,res,next) =>{
             const decoded = await jwt.verify(token,process.env.JWT_SECRET);
             req.userId=decoded?.id
     
-            }      
-        req.user = decoded;
+            }else{
+                decoded=jwt.decode(token)
+                req.userId=decoded?.sub
+            }
         next();
     }catch(err){
         res.status(401).json({message:err.message});
     }
 }
+
+export default auth;
