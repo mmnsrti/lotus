@@ -1,33 +1,37 @@
-import React from 'react'
+import React from "react";
 
-import {Container , AppBar ,Typography , Grow ,Grid } from '@mui/material'
-import lotus from './assets/lotus.png'
-import Forms from './components/Forms/Forms';
-import Posts from './components/Posts/Posts';
-import  './styles.css';
+import { Container } from "@mui/material";
+
+import Home from "./components/Home/Home";
+import Forms from "./components/Forms/Forms";
+import Navbar from "./components/Navbar/Navbar";
+import Auth from "./components/Auth/Auth";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import PostDetailed from './components/PostDetailed/PostDetailed'
+import "./styles.css";
 function App() {
-  
+  const user =JSON.parse(localStorage.getItem('profile'))
+ 
   return (
-    <div className="App">
-      <Container maxWidth='lg'>
-        <AppBar className='appBar' position='static' color='inherit'>
-          <Typography className='heading' variant='h2' align='center'>Lotus</Typography>
-          <img className='image' alt='Logo' src={lotus} />
-        </AppBar>
-        <Grow in>
-          <Container>
-            <Grid  container justifyContent="space-between" alignItems="stretch" spacing={2}>
-              <Grid xs={12}>
-                <Posts/>
-              </Grid>
-              <Grid xs={12}>
-                <Forms/>
-              </Grid>
-            </Grid>
-          </Container>
-        </Grow>
+    <Router>
+      <Container maxWidth="lg">
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<Navigate to="/posts" />} />
+          <Route path="/posts/search" exact element={<Home/> } />
+          <Route exact path="/posts" element={<Home/>} />
+          <Route exact path="/auth" element={user ? <Navigate to='/posts' /> : <Auth />} />
+          <Route path="/posts/:id" element={<PostDetailed/> } />
+          <Route exact path="/create" element={<Forms />} />
+        </Routes>
       </Container>
-    </div>
+    </Router>
   );
 }
 
