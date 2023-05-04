@@ -3,11 +3,12 @@ import { TextField, Button, Typography } from "@mui/material";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../actions/Post";
-
+import {useNavigate}  from 'react-router-dom'
 import "./forms.css";
+const user = JSON.parse(localStorage.getItem('profile'))
 const Forms = ({ currentId, setCurrentId }) => {
+  const navigate = useNavigate()
   const [postData, setPostData] = useState({
-    creator: "",
     title: "",
     message: "",
     tags: "",
@@ -15,14 +16,16 @@ const Forms = ({ currentId, setCurrentId }) => {
   });
   const dispatch = useDispatch();
   const post = useSelector((state) =>
-    currentId ? state.posts.find((message) => message._id === currentId) : null
+    currentId ? state.posts.posts.find((message) => message._id === currentId) : null
   );
   const handleSubmite = (e) => {
     e.preventDefault();
     if (currentId) {
-      dispatch(updatePost(currentId, postData));
+      dispatch(updatePost(currentId, {...postData, name:user?.result?.name }));
+      navigate('/')
+      clear()
     } else {
-      dispatch(createPost(postData));
+      dispatch(createPost({...postData, name:user?.result?.name }));
     }
     clear();
   };
@@ -31,7 +34,7 @@ const Forms = ({ currentId, setCurrentId }) => {
     setCurrentId(null);
 
     setPostData({
-      creator: "",
+
       title: "",
       message: "",
       tags: "",
@@ -41,6 +44,12 @@ const Forms = ({ currentId, setCurrentId }) => {
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
+
+  if(!user?.result?.name){
+      return(
+        <div></div>
+      )
+  }
   return (
     <div className="paper-form">
       <form
@@ -52,17 +61,7 @@ const Forms = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId ? "UpdatingPost" : "Creating Post"}
         </Typography>
-        <TextField
-          className="text_field"
-          name="creator"
-          variant="outlined"
-          label="Creator"
-          fullWidth
-          value={postData.creator}
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
-        />
+        
         <TextField
           className="text_field"
           name="title"
@@ -106,7 +105,7 @@ const Forms = ({ currentId, setCurrentId }) => {
             }
           />
         </div>
-        {postData.title && postData.creator && postData.selectedFile ? (
+        {postData.title && postData.selectedFile ? (
           <Button
             className="btn-submit"
             variant="contained"

@@ -5,5 +5,12 @@ export const FETCH_ALL = 'FETCH_ALL'
 export const LIKE = 'LIKE'
 export const AUTH = 'AUTH'
 export const LOGOUT = 'LOGOUT'
+export const FETCH_POSTS_BY_SEARCH ='FETCH_POSTS_BY_SEARCH'
+export const START_LOADING ='START_LOADING'
+export const END_LOADING ='END_LOADING'
+export const FETCH_POST ='FETCH_POST'
+
+export const ADD_COMMENT ='ADD_COMMENT'
+
 
 

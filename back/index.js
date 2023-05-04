@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({limit:'30mb',extended:true}))
 app.use(Cors())
 app.use('/posts' ,PostRoutes)
 app.use('/user' , userRoutes)
+app.get('/',(req,res)=>{
+    res.send('APP IS RUNNING')
+})
 
 const PORT = process.env.PORT || 5000
 mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser:true ,useUnifiedTopology:true})

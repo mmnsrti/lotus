@@ -21,7 +21,7 @@ const initailState = {
   lastName: "",
   email: "",
   password: "",
-  confirmpassword: "",
+  confirmPassword: "",
 };
 const Auth = () => {
   const [isSignup, setIsSignup] = useState(true);
@@ -103,7 +103,7 @@ const Auth = () => {
             />
             {isSignup && (
               <Input
-                name="confirmpassword"
+                name="confirmPassword"
                 label="Confirm Password"
                 handleChange={handleChange}
                 type="password"

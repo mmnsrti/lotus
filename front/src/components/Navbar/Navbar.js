@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppBar, Avatar, Toolbar, Typography, Button } from "@mui/material";
 import lotus from "../../assets/lotus.png";
+import decode from 'jwt-decode';
+import Forms from "../Forms/Forms";
 import "./navbar.css";
-const Navbar = () => {
+const Navbar = ({currentId, setCurrentId}) => {
   const dispatch = useDispatch();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const location = useLocation();
@@ -18,9 +20,12 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
-    const token = user?.token
-    
-    setUser(JSON.parse(localStorage.getItem("profile")));
+    const token = user?.token;
+    if (token) {
+      const decodedToken= decode(token) 
+      if (decodedToken.exp *1000<= new Date().getTime()) handleLogout()
+    setUser(JSON.parse(localStorage.getItem("profile")));}
+
   }, [location]);
 
   return (
@@ -51,6 +56,16 @@ const Navbar = () => {
             <Typography className="" variant="h6">
               {user.result.name}
             </Typography>
+            <Button
+              variant="contained"
+              className=""
+              component={Link}
+              to="/create"
+              setCurrentId={setCurrentId}
+              currentId={currentId}
+            >
+              create
+            </Button>
             <Button variant="contained" className="" onClick={handleLogout}>
               Log Out
             </Button>
