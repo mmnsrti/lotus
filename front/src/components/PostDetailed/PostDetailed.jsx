@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getpost, getpostsBySearch } from "../../actions/Post";
 import moment from "moment";
 import Comment from "./Comment";
+import Darkmode from '../Posts/Post/Darkmode'
 import "./PostDetailed.css";
 const PostDetailed = () => {
   const navigate = useNavigate();
@@ -39,8 +40,8 @@ const PostDetailed = () => {
   const recommended = posts.filter(({ _id }) => _id !== post._id);
   const openPost = (_id) => navigate(`/posts/${_id}`);
   return (
-    <Paper>
-      <div className="post-container">
+    <div className="post-container">
+      <div className="post-container-detailes">
         <div className="post-details">
           <Typography variant="h3" component="h2" className="title-postDetails">
             {post.title}
@@ -115,7 +116,7 @@ const PostDetailed = () => {
             <Typography gutterBottom variant="h6">
               {message}
             </Typography>
-            <Typography gutterBottom variant="h6">
+            <Typography gutterBottom variant="h6" className="like">
               Likes:{likes.length}
             </Typography>
           </div>
@@ -125,7 +126,7 @@ const PostDetailed = () => {
         </div>
       )}
      
-    </Paper>
+    </div>
   );
 };
 

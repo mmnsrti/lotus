@@ -1,33 +1,35 @@
-.paper-form{
+.paper-form {
     display: flex;
     padding: 1rem;
-    width: 400px;
-    box-sizing:border-box;
-    -webkit-flex-direction:row;
-    -ms-flex-direction:row;
-    flex-direction:row;
-    -ms-flex-preferred-size:100%;
-    justify-content:center;
-    -webkit-box-flex:0;
-    -webkit-flex-grow:0;
-    -ms-flex-positive:0;
-    flex-grow:0;
+    width: max-content;
+    box-sizing: border-box;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-preferred-size: 100%;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
     background-color: #ffffff;
-    max-width:100%;
+    max-width: 100%;
     padding: 1rem;
+    border-radius: 16PX;
     justify-items: flex-end;
-    box-shadow: 0 4px 15px 0 rgba(209, 58, 58, 0.897), 0 4px 20px 0 rgba(85, 167, 243, 0.973);
-    
+    margin-top: 15px;
 }
-.submit-form{
+
+.submit-form {
     margin: 1rem;
     display: flex;
     justify-content: center;
-    
+
     flex-wrap: wrap;
 
 
-} 
+}
+
 .submit-form {
     padding-top: 20px;
     padding-right: 70%px;
@@ -35,12 +37,12 @@
     padding-left: 70%px
 }
 
-.paper-form :nth-child(1){
+.paper-form :nth-child(1) {
     margin: 0.3rem;
     padding-top: 1.2rem;
 }
 
-.file_input{
+.file_input {
     position: relative;
     overflow: hidden;
     display: inline-block;
@@ -57,10 +59,11 @@
     border: 5px solid #1976D2;
     border-radius: 8px;
     color: #ffffff;
-    background:#1976D2;
+    background: #1976D2;
     margin: 1rem;
 }
-.file_input input[type=file]{
+
+.file_input input[type=file] {
     position: absolute;
     top: 0;
     right: 0;
@@ -70,6 +73,33 @@
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
-  
+
 }
 
+.selectedFile1 {
+  display: inline-block;
+  width: 2000px;
+  height: 320px;
+  border: 2px dashed grey;
+  padding: 10px;
+  margin-top: 74px;
+  text-align: center;
+  object-fit: contain;
+}
+
+.selectedFile1:before {
+  content: attr(data-placeholder);
+  color: grey;
+}
+
+.Nofileselected {
+  width: 2000px;
+  height: 320px;
+  border: 2px solid grey;
+  padding: 10px;
+  margin-top: 74px;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

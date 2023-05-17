@@ -1,17 +1,157 @@
-.appBar  {
-    border-radius: 20px;
-    margin: 30px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    align-Items: center;
-  }
-  .heading {
-    color: rgba(0, 86, 117, 0.904);
+.appBar {
+  display: flex;
+  border-radius: 20px;
+  margin: px 0px;
+  align-items: center;
+  position: static;
+  justify-content: space-around;
+  justify-items: start;
+  background-color: rgb(255, 255, 255);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: 0px 2px 4px -1px rgb(235, 235, 235), 0px 4px 5px 0px rgba(216, 188, 188, 0.993), 0px 1px 10px 0px rgb(235, 220, 220);
+}
+
+.appBar-Navbar {
+  display: contents;
+  cursor: pointer;
+ }
+.heading {
+  color: rgba(0, 0, 0, 0.904); 
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 300;
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.00833em;
+  text-decoration: auto;
+}
+
+.logo {
+  height: 70px;
+  cursor: pointer;
+
+
+}
+
+.dark-mode{
+}
+.avatar {
+
+}
+
+.name {
+}
+
+.create-Navbar {}
+.avatar-Navbar {
+  display: flex;
+  align-items: center;
+  white-space: pre;
+
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.name {
+  margin-right: auto;
+}
+
+.create-Navbar, .LogOut-Navbar {
+  margin-left: 100px;
+}
+
+.LogOut-Navbar {}
+
+.SignIn-Navbar {
+  margin-left: auto;
+  position: absolute;
+}
+.searchfiel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  place-items: stretch;
+}
+
+.searchfield {
+  flex: 1;
+}
+
+.ChipInput {
+  width: 12rem;
+  margin-right: 10px;
+}
+
+.my-search-button {
+  background-color: #3f51b5;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.my-search-button {
+  background-color: #3f51b5;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.my-search-button:hover {
+  background-color: #1a237e;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .appBar {
+    flex-direction: column;
+    padding: 20px;
   }
 
-  .image {
-    margin-left: 15px;
-    height: 70px;
-    
+  .searchfiel {
+    margin-right: 0;
+    margin-bottom: 10px;
+    justify-content: center;
   }
+
+  .my-search-button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .avatar-Navbar {
+    margin-top: 20px;
+    margin-left: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .name {
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+  .create-Navbar,
+  .LogOut-Navbar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+}

@@ -1,108 +1,130 @@
 .card {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    flex-direction: column;
-    height: 100%;
-  }
-.card-media{
-   
-    width:0px;
-    
-    padding: 50%;
-    
-    background-color: rgba(0, 0, 0, 0.247);
-    background-blend-mode: darken;
-    transition: all .1s ease-out;
-    
-}
-.card-media:hover,
-.card-media .creatorAt:hover {
-  background-color: white;
-}
-
-.typography-creator {
-    position:absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    
-}
-.creator,
-.creatorAt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  position: relative;
+  width: 556px;
+  margin: 10px;
   background-color: transparent;
-  color: white;
-  padding: 0;
+  border-radius: 10px;
+  box-shadow: rgba(102, 92, 92, 0.8) 0px 3px 8px -1px;
 }
+
+.card-ButtonBase {
+  background-color: #222;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.flip {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  transition: .9s ease;
+  backface-visibility: hidden;
+}
+.card-content{
+  transition: .9s ease;
+  opacity: 0;
+  position: absolute;
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.flip img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  object-fit:cover;
+
+}
+
+.card-ButtonBase:hover .flip img{
+  opacity: 0.3;
+
+}
+.card-ButtonBase:hover .card-content{
+  opacity: .8;
+
+}
+.flip:hover {
+  transition: ease-in;
+  opacity: 0.3;
+}
+
+
 .creator {
-    font-size: 32px;
-    font-weight: 500;
-    padding: 10px 0;
-  }
-  
-  .creatorAt {
-    font-size: 2px;
-  }
-  
-  .tags {
-    display: flex;
-    justify-content: space-between;
-    margin: 2px;
-  }
-  
-  .tag {
-    color: blue;
-  }
-  
-  .message {
-    padding: 0 30px;
-  }
-  
-  .cardActions {
-    padding: 0 16px 8px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-  
-  .button1 {
-    position: absolute;
-    top: 10%;
-    transform: translateY(-50%);
-    right: 1rem;
-    color: rgb(154, 208, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    
-    transition: all 0.3s ease-in-out;
-    
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:1150px){
-  
+  text-align: center;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-self: start;
+  position: absolute;
+  left: 482px;
+  top: -192px;
 }
-@media screen and (max-width:600px){
+
+.creatorAt {
+ 
+  text-align: center;
+  font-size: 16px;
+  color: #c29797;
+  top: 514px;
+  position: absolute;
+  left: 11px;
 
 }
-@media screen and (max-width:400px){
 
+
+.title {
+  text-align: center;
+  font-size: 45px;
+  position: absolute;
+    top: -180px;
+    left: 25px;
+}
+
+.button1 {
+  
+  position: absolute;
+  right: 2px;
+
+}
+.message{
+  text-align: center;
+  font-size: 5px;
+  position: relative;
+  bottom: 5;
+}
+.tags {
+  width: 576px;
+}
+
+.tag {}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like {
+  margin-right: 0.9rem;
+  display: flex;
+  
+}
+
+.delete {
+  display: flex;
+  align-items: center;
 }

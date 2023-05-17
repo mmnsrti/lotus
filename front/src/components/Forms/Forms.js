@@ -139,6 +139,8 @@ const Forms = ({ currentId, setCurrentId }) => {
           Clear
         </Button>
       </form>
+      {postData.selectedFile?<img src={postData.selectedFile} alt={postData.selectedFile} className="selectedFile1"/>:<div className="Nofileselected">No file selected</div>}
+
     </div>
   );
 };
