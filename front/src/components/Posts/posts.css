@@ -1,0 +1,23 @@
+/* Style for No-posts div */
+
+.No-posts {
+  display: grid;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Styles for Grid and Grid items */
+  .Grid-posts {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    
+  }
+  
+  
