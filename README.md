@@ -40,7 +40,7 @@ To get started with Lotus, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/lotus.git
+   git clone https://github.com/mmnsrti/lotus.git
    ```
 
    2. Navigate to the project directory in your terminal of choice (iTerm, Terminal):
@@ -70,7 +70,7 @@ To get started with Lotus, follow these steps:
    ```
    6. Run `npm start` from both the `/server/` and `/client/` directories concurrently.
 
-   7.Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Prerequisites
 
