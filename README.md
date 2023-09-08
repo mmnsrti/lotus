@@ -1,7 +1,6 @@
 # Lotus
 
-![Lotus Logo](/front/public/favicon.jpg)
-
+<img src="/front/public/favicon.jpg" alt="Lotus Logo" width="200" height="200">
 **Lotus** is a social media web application built using the MERN stack (MongoDB, Express, React, Node.js) along with various other technologies. It empowers users to effortlessly share, comment, like, edit, delete, and search for content.
 
 ## Features
