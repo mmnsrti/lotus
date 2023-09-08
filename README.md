@@ -25,13 +25,23 @@
 - [Mongoose](https://mongoosejs.com/) - MongoDB object modeling
 - [Express](https://expressjs.com/) - Web framework for Node.js
 - [Node.js](https://nodejs.org/) - Runtime environment
-- CSS - Styling
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling
+- [Material-UI](https://material-ui.com/) - React UI framework
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Async Redux logic
 - [Axios](https://axios-http.com/) - Promise-based HTTP client
 - [BCrypt](https://www.npmjs.com/package/bcrypt) - Password hashing
 - [JWT](https://jwt.io/) - Stateless user authentication
 - [React File Base64](https://www.npmjs.com/package/react-file-base64) - Image uploads
 - [React Moment](https://www.npmjs.com/package/react-moment) - Date formatting
+
+## Authentication
+
+- User registration via email and password
+- Login with Google OAuth
+
+### Screenshots
+
+
 
 ## Getting Started
 
