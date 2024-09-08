@@ -64,6 +64,7 @@ const Post = ({ post, setCurrentId }) => {
   const openPost = () => {
     navigate(`/posts/${post._id}`);
   };
+  console.log(post)
   const dispatch = useDispatch();
   if (!post) return null; // or any other error handling mechanism
   return (
